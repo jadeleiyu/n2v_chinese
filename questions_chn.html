@@ -1,0 +1,116 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+<crowd-instructions>
+    <link-text>
+        点击这里以显示问题介绍与示例。
+        Click here for full instructions and examples.
+    </link-text>
+    <detailed-instructions>
+    <p>
+        在现代标准汉语中，存在很多可以活用做动词的名词。例如，"漆"字既可以在"油漆"中做名词，也可以在"漆墙"中作为动词出现。
+
+    </p>
+    <p>
+        在这个问卷中，您将根据活用名词的词义，来选择新的动词来表达该活用名词的意思。
+        在每一个问题中，您将看到两个例句。在第一个例句中，会有一个活用作动词的名词出现，而在第二个（不完整的）例句中，该词会以原始的名词词性出现。
+        您需要从给定的三个备选动词中，选择合适的动词来填补到第二个例句中，使得两个例句表达的意思尽可能相同。
+        如果您认为，没有一个候选动词是合理的选项，那么请您在选项下方的文本框中，填写一个您认为合理的动词，使得该动词填入(b)例句的空缺中后，两个例句(a)与(b)表达的意思尽可能相同。
+        （注意：您填写的动词中不能含有问题中的活用名词，因为这个调查的目的是将活用名词翻译成一个不同的动词。）
+    </p>
+
+    <p>
+        点击"示例"以观看示例问题与答案。
+        Click on "Examples" to see sample questions and answers.
+    </p>
+    </detailed-instructions>
+    <positive-example>
+     <p>在下面的例句(a)中，"漆"字作为动词出现： </p>
+     <p>(a): "我在漆墙。"</p>
+     <p> 请根据下面这个不完整的例句(b)，从三个候选动词中选择合适的动词填空，使得两个例句(a)与(b)的意思尽量相同：
+     <p> (b): "我把油漆 __ 在了墙上。"</p>
+     <p> 这个问题的三个候选动词为:</p>
+     <p>a. 涂</p>
+     <p>b. 搬</p>
+     <p>c. 抹</p>
+     <p>您可以选择任意数目的动词（不一定只选择一个），只要您认为您选择的动词，可以使得两个例句(a)与(b)的意思尽量相同。</p>
+     <p>在这个例题中，a选项"涂"与c选项"抹"是较为合理的选项，因此您可以选择a与c中的任何一个，或者同时选择这两个动词。 </p>
+     <p>如果您认为，没有一个动词是合理的选项，那么请您在问题页面下方的文本框中，填写一个您认为合理的动词，使得该动词填入(b)例句的空缺中后，两个例句(a)与(b)表达的意思尽可能相同。</p>
+     <p>注意：您填写的动词中不能含有问题中的活用名词——例如这里，您不能填写含有"漆"字的动词。</p>
+     </positive-example>
+
+     <negative-example>
+     <p>在下面的例句(a)中，"盖"字作为动词出现： </p>
+     <p>(a): "我盖上了锅。"</p>
+     <p> 请根据下面这个不完整的例句(b)，从三个候选动词中选择合适的动词填空，使得两个例句(a)与(b)的意思尽量相同：
+     <p> (b): "我把盖子 __ 在了锅上。"</p>
+     <p> 这个问题的三个候选动词为:</p>
+     <p>a. 粘</p>
+     <p>b. 洒</p>
+     <p>c. 看</p>
+     <p>您可以选择任意数目的动词（不一定只选择一个），只要您认为您选择的动词，可以使得两个例句(a)与(b)的意思尽量相同。</p>
+     <p>如果您认为，没有一个动词是合理的选项，那么请您在问题页面下方的文本框中，填写一个您认为合理的动词，使得该动词填入(b)例句的空缺中后，两个例句(a)与(b)表达的意思尽可能相同。</p>
+     <p>注意：您填写的动词中不能含有问题中的活用名词——例如这里，您不能填写诸如"覆盖"这类含有"盖"字的动词。</p>
+     <p>在这个例题中，三个选项都不是合适的动词，因此您可以在文本框中自己输入一个合适的动词，例如"扣"或"蒙"。 </p>
+     </negative-example>
+    <short-summary>
+        请点击"Detailed Instruction"和"Examples"来观看问题介绍与示例。
+    </short-summary>
+</crowd-instructions>
+  <!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes"></label>
+  <p>在下面的例句(a)中，"${denominal_verb}"字作为动词出现：</p>
+  <p>"${denominal_utterance}"</p>
+  <p>请根据下面这个不完整的例句(b)，从三个候选动词中选择合适的动词填空，使得两个例句(a)与(b)的意思尽量相同：</p>
+  <p> "${paraphrase_utterance}" </p>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      ${candidate_verb_0}
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      ${candidate_verb_1}
+    </label>
+	</div>
+	<div class="checkbox">
+    <label for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+      ${candidate_verb_2}
+    </label>
+	</div>
+
+
+	<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">
+      如果您认为，没有一个动词是合理的选项，那么请您在下方的文本框中，填写一个您认为合适的动词，使得该动词填入(b)例句的空缺中后，两个例句(a)与(b)表达的意思尽可能相同。
+      注意：您填写的动词中不能含有问题中的活用名词"${denominal_verb}"。
+    </label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  </div>
+</div>
+
+  </div>
+</div>
+
+</crowd-form>
+      </html>
+]]>
+  </HTMLContent>
+  <FrameHeight>0</FrameHeight>
+</HTMLQuestion>
